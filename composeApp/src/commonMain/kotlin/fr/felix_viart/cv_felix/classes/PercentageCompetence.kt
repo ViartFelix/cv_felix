@@ -1,10 +1,8 @@
 package fr.felix_viart.cv_felix.classes
 
-import androidx.annotation.FloatRange
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.material.LinearProgressIndicator
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -16,12 +14,11 @@ import kotlin.math.roundToInt
 
 data class PercentageCompetence(
     val title: String,
-    @FloatRange(from = 0.0, to = 1.0)
-    val percentage: Float,
-    val fontColor: Color,
-
-    val progressColor: Color,
-    val bgProgressColor: Color,
+    val progress: Float,
+    val textValue: String? = null,
+    val fontColor: Color = Color.White,
+    val progressColor: Color = Color.White,
+    val bgProgressColor: Color = Color.Black,
 ): ComposableInterface {
 
     @Composable
@@ -30,21 +27,29 @@ data class PercentageCompetence(
             Text(
                 text = title,
                 color = fontColor,
-                modifier = Modifier.width( super.textWidth ).padding( end = super.textRightMargin ),
+                modifier = Modifier.fillMaxWidth().padding( end = super.textRightMargin ),
                 fontWeight = FontWeight.Bold
             )
 
-            //container for the progress bar and
+            //container for the progress bar and text
             Column {
-                val roundedPercentage = (percentage * 100).roundToInt()
+
+                //compute the final text
+                val finalText: String = if( textValue === null ) {
+                    val roundedPercentage = (progress * 100).roundToInt()
+
+                    "$roundedPercentage %"
+                } else {
+                    textValue
+                }
 
                 Text(
-                    text = "$roundedPercentage %",
+                    text = finalText,
                     color = progressColor
                 )
 
                 LinearProgressIndicator(
-                    progress = percentage,
+                    progress = progress,
                     color = progressColor,
                     backgroundColor = bgProgressColor,
                     modifier = Modifier.fillMaxWidth()
