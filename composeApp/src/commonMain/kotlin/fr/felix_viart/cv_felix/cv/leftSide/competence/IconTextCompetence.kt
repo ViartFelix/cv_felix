@@ -1,4 +1,4 @@
-package fr.felix_viart.cv_felix.classes
+package fr.felix_viart.cv_felix.cv.leftSide.competence
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
