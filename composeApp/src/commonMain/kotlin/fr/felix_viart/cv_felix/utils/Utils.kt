@@ -19,7 +19,9 @@ import androidx.compose.ui.unit.dp
 import fr.felix_viart.cv_felix.data.experience.SingleEducation
 import fr.felix_viart.cv_felix.data.experience.SingleExperience
 import fr.felix_viart.cv_felix.data.left.IconText
+import fr.felix_viart.cv_felix.data.skills.SingleLanguage
 import fr.felix_viart.cv_felix.data.skills.SingleSkill
+import fr.felix_viart.cv_felix.data.skills.SkillsHolder
 import fr.felix_viart.cv_felix.enums.SkillLevel
 import kotlinx.datetime.Instant
 import kotlin.random.Random
@@ -129,24 +131,6 @@ object Utils {
         iconsList.random()
     )
 
-    public fun getRandomAmountOfSingleSkill(@IntRange(from = 1) min: Int = 1, max: Int): List<SingleSkill>
-    {
-        if( min < 1 ) {
-            throw Exception("Cannot generate random skills with min < 1 ('${min}' given).")
-        }
-
-        val length = (min..max).random()
-
-        return (1..length).map { _ ->
-            getSingleRandomSkill()
-        }
-    }
-
-    public fun getSingleRandomSkill(): SingleSkill = SingleSkill(
-        randomLettersInRange(min = 2, max = 10),
-        SkillLevel.entries.random()
-    )
-
     public fun getRandomAmountOfSingleExperience(@IntRange(from = 1) min: Int = 1, max: Int): List<SingleExperience>
     {
         if( min < 1 ) {
@@ -186,6 +170,31 @@ object Utils {
         randomLettersInRange(7, 50),
         randomTimestamp(),
         if( Random.nextBoolean() ) randomTimestamp() else null
+    )
+
+    /**
+     * Returns a skill holder with random generated data inside
+     */
+    public fun randomSkillHolder(): SkillsHolder = SkillsHolder(
+        (1..(1..3).random()).map { getSingleRandomSpokenLanguage() },
+        (1..(1..3).random()).map { getSingleRandomSkill() },
+        (1..(1..3).random()).map { getSingleRandomSkill() },
+    )
+
+    /**
+     * Returns a randomly generated skill
+     */
+    public fun getSingleRandomSkill(): SingleSkill = SingleSkill(
+        randomLettersInRange(6, 10),
+        SkillLevel.entries.random(),
+    )
+
+    /**
+     * Returns a randomly generated spoken language
+     */
+    public fun getSingleRandomSpokenLanguage(): SingleLanguage = SingleLanguage(
+        randomLettersInRange(6, 10),
+        SkillLevel.entries.random()
     )
 
     public fun randomTimestamp(): Instant = Instant

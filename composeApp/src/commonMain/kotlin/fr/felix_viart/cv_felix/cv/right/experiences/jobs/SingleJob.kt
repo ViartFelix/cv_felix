@@ -5,8 +5,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import fr.felix_viart.cv_felix.composables.ChatBubble
-import fr.felix_viart.cv_felix.utils.Utils
 import fr.felix_viart.cv_felix.data.experience.SingleExperience
+import fr.felix_viart.cv_felix.utils.Utils
 import kotlinx.datetime.Instant
 
 /**
