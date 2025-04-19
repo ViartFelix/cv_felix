@@ -68,6 +68,7 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
+            implementation(libs.kotlinx.datetime)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
@@ -104,9 +105,6 @@ android {
 }
 
 dependencies {
-//    implementation(libs.androidx.foundation.android)
-//    implementation(libs.androidx.material3.android)
-//    implementation(libs.androidx.compose.material)
     debugImplementation(compose.uiTooling)
 }
 

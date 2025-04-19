@@ -1,4 +1,4 @@
-package fr.felix_viart.cv_felix.cv.leftSide.competence
+package fr.felix_viart.cv_felix.cv.left
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.aspectRatio
