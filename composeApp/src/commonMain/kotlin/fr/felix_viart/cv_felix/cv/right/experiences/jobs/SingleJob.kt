@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import fr.felix_viart.cv_felix.composables.ChatBubble
 import fr.felix_viart.cv_felix.utils.Utils
 import fr.felix_viart.cv_felix.data.experience.SingleExperience
 import kotlinx.datetime.Instant
@@ -19,7 +20,7 @@ fun SingleJob(
     Column {
 
         //future chat bubble here
-        Column {
+        ChatBubble {
             Row {
                 Text(job.company)
             }
@@ -51,10 +52,5 @@ fun SingleJob(
                 Text(job.description)
             }
         }
-
-
     }
-
-
-
 }

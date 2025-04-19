@@ -1,8 +1,10 @@
 package fr.felix_viart.cv_felix.cv.right.experiences.jobs
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.material.Text
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.Composable
@@ -18,7 +20,7 @@ fun AllJobs(
 ) {
     //main container
     Row(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxWidth().height(IntrinsicSize.Min)
     ) {
         //container for the left side
         Column {
@@ -26,10 +28,12 @@ fun AllJobs(
         }
 
         jobs.forEach {
-            SingleJob(it)
+            Column {
+                SingleJob(it)
 
-            //better visibility
-            HorizontalDivider()
+                //better visibility
+                HorizontalDivider()
+            }
         }
     }
 
