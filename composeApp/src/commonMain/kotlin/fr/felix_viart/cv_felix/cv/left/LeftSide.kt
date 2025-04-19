@@ -7,5 +7,6 @@ import androidx.compose.runtime.Composable
  */
 @Composable
 fun cvLeftSide() {
-    nameAndPhoto()
+    NameAndPhoto()
+    AboutMe()
 }

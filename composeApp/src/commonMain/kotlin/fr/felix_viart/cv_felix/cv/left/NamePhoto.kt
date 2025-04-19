@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
  * Renders the name and photo
  */
 @Composable
-fun nameAndPhoto()
+fun NameAndPhoto()
 {
     //main container
     Row(
