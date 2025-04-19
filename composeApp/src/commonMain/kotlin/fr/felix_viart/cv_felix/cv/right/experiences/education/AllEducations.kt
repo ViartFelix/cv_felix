@@ -1,6 +1,5 @@
-package fr.felix_viart.cv_felix.cv.right.experiences.jobs
+package fr.felix_viart.cv_felix.cv.right.experiences.education
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
@@ -10,19 +9,18 @@ import androidx.compose.material.Text
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import fr.felix_viart.cv_felix.data.experience.SingleExperience
+import fr.felix_viart.cv_felix.data.experience.SingleEducation
 
 /**
- * Renders all given jobs.
+ * Renders all given educations.
  */
 @Composable
-fun AllJobs(
-    jobs: List<SingleExperience>
+fun AllEducations(
+    jobs: List<SingleEducation>
 ) {
     //main container
     Row(
-        modifier = Modifier.fillMaxWidth().height(IntrinsicSize.Min).background(Color.Red)
+        modifier = Modifier.fillMaxWidth().height(IntrinsicSize.Min)
     ) {
         //container for the left side
         Column {
@@ -31,7 +29,7 @@ fun AllJobs(
 
         jobs.forEach {
             Column {
-                SingleJob(it)
+                SingleEducation(it)
 
                 //better visibility
                 HorizontalDivider()

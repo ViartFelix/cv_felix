@@ -2,6 +2,7 @@ package fr.felix_viart.cv_felix.cv.right.experiences
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.runtime.Composable
+import fr.felix_viart.cv_felix.cv.right.experiences.education.AllEducations
 import fr.felix_viart.cv_felix.cv.right.experiences.jobs.AllJobs
 import fr.felix_viart.cv_felix.data.experience.SingleEducation
 import fr.felix_viart.cv_felix.data.experience.SingleExperience
@@ -16,5 +17,6 @@ fun Experiences(
 ) {
     Row {
         AllJobs(jobs)
+        AllEducations(education)
     }
 }
