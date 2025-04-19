@@ -9,7 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import fr.felix_viart.cv_felix.Utils
+import fr.felix_viart.cv_felix.utils.Utils
 import fr.felix_viart.cv_felix.data.left.IconText
 
 /**

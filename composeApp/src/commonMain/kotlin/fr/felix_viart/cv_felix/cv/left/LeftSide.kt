@@ -1,7 +1,7 @@
 package fr.felix_viart.cv_felix.cv.left
 
 import androidx.compose.runtime.Composable
-import fr.felix_viart.cv_felix.Utils
+import fr.felix_viart.cv_felix.utils.Utils
 import fr.felix_viart.cv_felix.cv.left.category.RenderCategory
 
 /**

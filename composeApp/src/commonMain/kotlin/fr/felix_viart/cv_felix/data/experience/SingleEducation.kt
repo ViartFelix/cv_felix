@@ -7,7 +7,7 @@ import kotlinx.datetime.Instant
  */
 data class SingleEducation(
     val schoolName: String,
-    val description: String,
+    val diploma: String,
 
     val beginDate: Instant,
     val endDate: Instant? = null,

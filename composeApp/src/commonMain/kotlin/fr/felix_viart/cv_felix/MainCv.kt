@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import fr.felix_viart.cv_felix.cv.left.cvLeftSide
+import fr.felix_viart.cv_felix.cv.right.cvRightSide
 
 /**
  * Main CV entrypoint.
@@ -20,10 +21,18 @@ fun mainCvEntrypoint(
     Row(
         modifier = Modifier.fillMaxSize()
     ) {
+        //left side container
         Column(
             modifier = Modifier.fillMaxWidth( leftSideSize )
         ) {
             cvLeftSide()
+        }
+
+        //right side container
+        Column(
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            cvRightSide()
         }
     }
 }
