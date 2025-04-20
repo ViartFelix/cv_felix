@@ -65,6 +65,9 @@ object Utils {
      */
     val endTimestamp: Long = 1735689600L
 
+    /** Sizes of the lines in the CV */
+    val lineWidth: Dp = 4.dp
+
     /**
      * Generates random letters with given length.
      */
