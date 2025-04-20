@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import fr.felix_viart.cv_felix.cv.right.experiences.education.AllEducations
 import fr.felix_viart.cv_felix.cv.right.experiences.jobs.AllJobs
 import fr.felix_viart.cv_felix.data.experience.SingleEducation
 import fr.felix_viart.cv_felix.data.experience.SingleExperience
@@ -38,7 +39,7 @@ fun Experiences(
         Box(
             modifier = Modifier.fillMaxWidth()
         ) {
-            //AllEducations(education)
+            AllEducations(education)
         }
     }
 }

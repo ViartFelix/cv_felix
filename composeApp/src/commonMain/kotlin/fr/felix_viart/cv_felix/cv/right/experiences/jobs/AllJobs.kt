@@ -27,12 +27,13 @@ fun AllJobs(
     jobs: List<SingleExperience>,
     spaceBetween: Dp = 28.dp,
     leftMargin: Dp = 32.dp,
+    modifier: Modifier = Modifier
 ) {
     //main container
     Row(
-        modifier = Modifier.fillMaxWidth()
+        modifier = modifier.fillMaxWidth()
     ) {
-        //calculate the padding left of the title
+        //calculation for the margin left of the title
         val jobArrowWidth = 32.dp
 
         //divider on the left

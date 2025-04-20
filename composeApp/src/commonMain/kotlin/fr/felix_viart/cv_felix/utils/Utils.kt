@@ -154,8 +154,10 @@ object Utils {
         randomLettersInRange(5, 30),
         randomLettersInRange(10, 20),
         description = if( Random.nextBoolean() ) randomLettersInRange(50, 200) else null,
-        randomTimestamp(),
-        if( Random.nextBoolean() ) randomTimestamp() else null
+        Pair(
+            randomTimestamp(),
+            if( Random.nextBoolean() ) randomTimestamp() else null
+        )
     )
 
     public fun getRandomAmountOfSingleEducation(@IntRange(from = 1) min: Int = 1, max: Int): List<SingleEducation>
@@ -174,8 +176,10 @@ object Utils {
     public fun getSingleRandomEducation(): SingleEducation = SingleEducation(
         randomLettersInRange(5, 30),
         randomLettersInRange(7, 50),
-        randomTimestamp(),
-        if( Random.nextBoolean() ) randomTimestamp() else null
+        Pair(
+            randomTimestamp(),
+            if( Random.nextBoolean() ) randomTimestamp() else null
+        )
     )
 
     /**

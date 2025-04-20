@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import fr.felix_viart.cv_felix.composables.ChatBubble
 import fr.felix_viart.cv_felix.composables.CvText
@@ -22,6 +23,8 @@ import kotlinx.datetime.Instant
 @Composable
 fun SingleJob(
     job: SingleExperience,
+    spaceBetweenTitleAndDescription: Dp = 5.dp,
+    paddingBottomWhenNoDescription: Dp = 7.dp,
     modifier: Modifier = Modifier,
 ) {
     //main container
@@ -38,10 +41,11 @@ fun SingleJob(
 
             //dates
             Row {
-                val beginDate = Utils.toLocalDate(job.beginDate)
+                val dates = job.dates
+                val beginDate = Utils.toLocalDate(dates.first)
 
-                val endDate = if( job.endDate is Instant ) {
-                    Utils.toLocalDate(job.endDate)
+                val endDate = if( dates.second is Instant ) {
+                    Utils.toLocalDate(dates.second!!)
                 } else {
                     //assume it's out current job if endDate is null
                     "now"
@@ -53,7 +57,7 @@ fun SingleJob(
 
         //container for bottom content
         Column(
-            verticalArrangement = Arrangement.spacedBy(5.dp)
+            verticalArrangement = Arrangement.spacedBy(spaceBetweenTitleAndDescription)
         ) {
             CvText(job.jobTitle, TextStyle.Subtitle)
 
@@ -61,7 +65,7 @@ fun SingleJob(
                 CvText(job.description, TextStyle.SmallThin)
             } else {
                 //margin bottom for less "weird" looking char bubbles
-                Box(modifier = Modifier.padding(bottom = 7.dp)) {}
+                Box(modifier = Modifier.padding(bottom = paddingBottomWhenNoDescription)) {}
             }
         }
     }

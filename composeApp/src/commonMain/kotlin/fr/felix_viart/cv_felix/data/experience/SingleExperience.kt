@@ -10,6 +10,6 @@ data class SingleExperience(
     val jobTitle: String,
     val description: String? = null,
 
-    val beginDate: Instant,
-    val endDate: Instant? = null,
+    /** First is begin date, second is end date. Leave null if current education. */
+    val dates: Pair<Instant, Instant?>
 )
