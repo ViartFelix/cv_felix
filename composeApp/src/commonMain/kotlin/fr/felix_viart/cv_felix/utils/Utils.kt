@@ -178,7 +178,7 @@ object Utils {
     public fun randomSkillHolder(): SkillsHolder = SkillsHolder(
         (1..(1..3).random()).map { getSingleRandomSpokenLanguage() },
         (1..(1..3).random()).map { getSingleRandomSkill() },
-        (1..(1..3).random()).map { getSingleRandomSkill() },
+        getRandomAmountOfIconText(min = 1, max = 3),
     )
 
     /**

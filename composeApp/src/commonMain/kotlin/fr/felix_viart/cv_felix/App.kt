@@ -3,6 +3,7 @@ package fr.felix_viart.cv_felix
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -31,11 +32,9 @@ fun App()
 /**
  * Returns the common border to use for the skills and languages.
  */
-fun Modifier.borderSkill(size: Dp = 2.dp, color: Color = Color.White) : Modifier = this.border(
-    size,
-    color,
-    CircleShape
-)
+fun Modifier.borderSkill(size: Dp = 2.dp, color: Color = Color.White) : Modifier = this
+    .border(size, color,CircleShape)
+    .padding(size)
 
 /**
  * Sets the shape to a circle

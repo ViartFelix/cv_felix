@@ -16,7 +16,7 @@ fun AllCodingLanguages(
         Row {
             languages.forEach {
                 Column {
-                    SingleCodingLanguage(it)
+                    SingleCodingSkill(it)
                 }
             }
         }
