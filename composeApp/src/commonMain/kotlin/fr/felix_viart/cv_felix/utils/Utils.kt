@@ -187,7 +187,7 @@ object Utils {
      */
     public fun randomSkillHolder(): SkillsHolder = SkillsHolder(
         (1..(1..3).random()).map { getSingleRandomSpokenLanguage() },
-        (1..(1..3).random()).map { getSingleRandomSkill() },
+        (1..(3..4).random()).map { getSingleRandomSkill() },
         getRandomAmountOfIconText(min = 1, max = 3),
     )
 
@@ -195,7 +195,7 @@ object Utils {
      * Returns a randomly generated skill
      */
     public fun getSingleRandomSkill(): SingleSkill = SingleSkill(
-        randomLettersInRange(6, 10),
+        randomLettersInRange(3, 5),
         SkillLevel.entries.random(),
     )
 

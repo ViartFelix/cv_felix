@@ -13,20 +13,24 @@ import androidx.compose.ui.unit.dp
 import fr.felix_viart.cv_felix.borderSkill
 import fr.felix_viart.cv_felix.circle
 import fr.felix_viart.cv_felix.enums.SkillLevel
+import fr.felix_viart.cv_felix.utils.Palette
 
 @Composable
 fun SkillLevelRender(
     level: SkillLevel,
-    fill: Color = Color.White,
+    fill: Palette = Palette.White,
+    borderColor: Palette = Palette.White,
+    borderSize: Dp = 3.dp,
     size: Dp = 12.dp
 ) {
+    //sort skill levels (to avoid a messed up order)
     val sortedSkillLevels = SkillLevel.entries.sortedBy { it.level }
 
     Row {
         sortedSkillLevels.forEach {
 
             val finalBackground: Color = if( level.level >= it.level ) {
-                fill
+                fill.color
             } else {
                 Color.Transparent
             }
@@ -34,7 +38,7 @@ fun SkillLevelRender(
             Box(
                 modifier = Modifier
                     .circle()
-                    .borderSkill(3.dp)
+                    .borderSkill(borderSize, borderColor.color)
                     .width(size)
                     .aspectRatio(1f)
                     .background(finalBackground)

@@ -14,7 +14,7 @@ import fr.felix_viart.cv_felix.data.skills.SkillsHolder
  */
 @Composable
 fun MainSkills(
-    skills: SkillsHolder
+    skills: SkillsHolder,
 ) {
     Row {
         Column {
