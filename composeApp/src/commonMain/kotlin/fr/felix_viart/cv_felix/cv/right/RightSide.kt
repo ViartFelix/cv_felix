@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import fr.felix_viart.cv_felix.background
+import fr.felix_viart.cv_felix.cv.right.experiences.Experiences
 import fr.felix_viart.cv_felix.cv.right.skills.MainSkills
 import fr.felix_viart.cv_felix.utils.Palette
 import fr.felix_viart.cv_felix.utils.Utils
@@ -30,12 +31,10 @@ fun cvRightSide(
             .padding(vertical = padding.first, horizontal = padding.second),
         verticalArrangement = Arrangement.spacedBy(25.dp)
     ) {
-        /*
         Experiences(
             jobs = Utils.getRandomAmountOfSingleExperience(min = 1, max = 3),
             education = Utils.getRandomAmountOfSingleEducation(min = 1, max = 3)
         )
-         */
 
         Row(
             modifier = Modifier

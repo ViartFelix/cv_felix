@@ -3,25 +3,34 @@ package fr.felix_viart.cv_felix.cv.right.skills.interests
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Icon
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import fr.felix_viart.cv_felix.composables.CvText
 import fr.felix_viart.cv_felix.data.left.IconText
+import fr.felix_viart.cv_felix.utils.Palette
+import fr.felix_viart.cv_felix.utils.TextStyle
 
 /**
  * Renders a single interest
  */
 @Composable
 fun SingleInterest(
-    interest: IconText
+    interest: IconText,
+    color: Palette = Palette.White,
+    modifier: Modifier = Modifier,
 ) {
     Column(
+        modifier = modifier,
         verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Icon(
             interest.icon,
-            contentDescription = "Icon"
+            contentDescription = "Icon",
+            tint = color.color
         )
 
-        Text(interest.content)
+        CvText(interest.content, TextStyle.Normal, color)
     }
 }
