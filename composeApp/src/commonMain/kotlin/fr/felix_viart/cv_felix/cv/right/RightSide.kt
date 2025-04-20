@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import fr.felix_viart.cv_felix.cv.right.experiences.Experiences
+import fr.felix_viart.cv_felix.cv.right.skills.MainSkills
 import fr.felix_viart.cv_felix.utils.Utils
 
 /**
@@ -30,7 +31,7 @@ fun cvRightSide(
         )
 
         Row {
-            //MainSkills( Utils.randomSkillHolder() )
+            MainSkills( Utils.randomSkillHolder() )
         }
 
     }
