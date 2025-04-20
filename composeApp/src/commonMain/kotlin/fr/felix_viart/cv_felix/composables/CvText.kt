@@ -21,6 +21,7 @@ fun CvText(
         modifier = modifier,
         fontSize = style.size,
         fontWeight = style.boldness,
+        fontStyle = style.style,
         color = color.color
     )
 }

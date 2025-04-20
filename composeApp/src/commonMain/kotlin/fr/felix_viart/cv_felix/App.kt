@@ -13,6 +13,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import fr.felix_viart.cv_felix.utils.Palette
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -49,3 +50,7 @@ fun Modifier.circle() : Modifier = this.clip(CircleShape)
  */
 fun Modifier.background(color: Palette) : Modifier = this.background(color.color, RectangleShape)
 
+/**
+ * Converts a raw SP to DP. Conversion Rate: 1 SP = 1 DP.
+ */
+fun TextUnit.toDp() : Dp = Dp(this.value)

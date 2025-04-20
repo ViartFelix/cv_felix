@@ -48,7 +48,7 @@ fun AboutMe(
             verticalArrangement = Arrangement.spacedBy(spaceBellowTitle)
         ) {
             CvText("ABOUT ME", TextStyle.Title, color)
-            CvText(text, TextStyle.Normal, color)
+            CvText(text, TextStyle.Italic, color)
         }
     }
 }
