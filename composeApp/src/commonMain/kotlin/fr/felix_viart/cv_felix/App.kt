@@ -15,19 +15,23 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
+import fr.felix_viart.cv_felix.data.MainCvData
 import fr.felix_viart.cv_felix.utils.Palette
+import fr.felix_viart.cv_felix.utils.Utils
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 @Preview
-fun App()
-{
+fun App(
+    data: MainCvData = Utils.getRealData()
+) {
     MaterialTheme {
         Row(
             modifier = Modifier.fillMaxSize()
         ) {
             mainCvEntrypoint(
-                1.0f / 3.0f
+                1.0f / 3.0f,
+                data = data
             )
         }
     }

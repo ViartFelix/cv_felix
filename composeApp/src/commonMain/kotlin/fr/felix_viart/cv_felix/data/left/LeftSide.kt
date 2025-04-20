@@ -9,6 +9,6 @@ data class LeftSide(
     val title: String,
     val presentation: String,
 
-    val contactMediums: Array<IconText>,
-    val socials: Array<IconText>,
+    val contactMediums: List<IconText>,
+    val socials: List<IconText>,
 )

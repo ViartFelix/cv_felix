@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import fr.felix_viart.cv_felix.composables.CvText
+import fr.felix_viart.cv_felix.data.left.LeftSide
 import fr.felix_viart.cv_felix.utils.Palette
 import fr.felix_viart.cv_felix.utils.TextStyle
 import fr.felix_viart.cv_felix.utils.Utils
@@ -23,11 +24,12 @@ import fr.felix_viart.cv_felix.utils.Utils
  */
 @Composable
 fun NameAndPhoto(
+    data: LeftSide,
     photoSize: Float = 0.35f,
     textColor: Palette = Palette.White,
     dividerHeight: Dp = Utils.lineWidth,
     spaceBetween: Dp = 15.dp,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     //main container
     Row(
@@ -55,10 +57,10 @@ fun NameAndPhoto(
                 modifier = Modifier.fillMaxWidth().height(IntrinsicSize.Min),
             ) {
                 //last name
-                CvText("VIART", style = TextStyle.LastName, color = textColor)
+                CvText(data.lastName, style = TextStyle.LastName, color = textColor)
 
                 //first name
-                CvText("Félix", style = TextStyle.FirstName, color = textColor)
+                CvText(data.firstName, style = TextStyle.FirstName, color = textColor)
             }
 
             HorizontalDivider(
@@ -67,7 +69,7 @@ fun NameAndPhoto(
             )
 
             //job position
-            CvText("Web Dev", style = TextStyle.Position, color = textColor)
+            CvText(data.title, style = TextStyle.Position, color = textColor)
         }
     }
 }

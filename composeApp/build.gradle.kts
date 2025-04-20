@@ -70,6 +70,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(libs.kotlinx.datetime)
             implementation(compose.material3)
+            implementation(libs.composeIcons.tablerIcons)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)

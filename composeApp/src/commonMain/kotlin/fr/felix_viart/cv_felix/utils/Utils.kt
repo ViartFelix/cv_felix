@@ -7,18 +7,29 @@ import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Done
+import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Face
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import compose.icons.TablerIcons
+import compose.icons.tablericons.BrandGithub
+import compose.icons.tablericons.BrandLinkedin
+import compose.icons.tablericons.Code
+import compose.icons.tablericons.DeviceGamepad
+import compose.icons.tablericons.Run
+import compose.icons.tablericons.World
+import fr.felix_viart.cv_felix.data.MainCvData
 import fr.felix_viart.cv_felix.data.experience.SingleEducation
 import fr.felix_viart.cv_felix.data.experience.SingleExperience
 import fr.felix_viart.cv_felix.data.left.IconText
+import fr.felix_viart.cv_felix.data.left.LeftSide
 import fr.felix_viart.cv_felix.data.skills.SingleLanguage
 import fr.felix_viart.cv_felix.data.skills.SingleSkill
 import fr.felix_viart.cv_felix.data.skills.SkillsHolder
@@ -110,6 +121,145 @@ object Utils {
 
         return formatter.formatDate(date)
     }
+
+    // ------------------------------ Real data methods ------------------------------
+
+    /**
+     * Returns all the real data on the CV
+     */
+    public fun getRealData(): MainCvData
+    {
+        return MainCvData(
+            leftSide = getRealLeftSideData(),
+            skills = getSkillsHolder(),
+            experience = getRealExperiences(),
+            education = getRealEducationData()
+        )
+    }
+
+    /**
+     * Returns the real data for the skills holder
+     */
+    public fun getSkillsHolder(): SkillsHolder
+    {
+        val spokenLanguages = listOf(
+            SingleLanguage("French", SkillLevel.Expert),
+            SingleLanguage("English", SkillLevel.Advanced),
+            SingleLanguage("Spanish", SkillLevel.Novice),
+        )
+
+        val codingLanguages = listOf(
+            SingleSkill("PHP", SkillLevel.Advanced),
+            SingleSkill("JS", SkillLevel.Intermediate),
+            SingleSkill("SQL", SkillLevel.Intermediate),
+            SingleSkill("VueJS", SkillLevel.Intermediate),
+            SingleSkill("Laravel", SkillLevel.Novice),
+            SingleSkill("CI4", SkillLevel.Advanced),
+            SingleSkill("Symfony", SkillLevel.Intermediate),
+        )
+
+        val interests = listOf(
+            IconText("Video games", TablerIcons.DeviceGamepad),
+            IconText("Coding", TablerIcons.Code),
+            IconText("Gym", TablerIcons.Run)
+        )
+
+        return SkillsHolder(
+            spokenLanguages = spokenLanguages,
+            codingLanguages = codingLanguages,
+            interests = interests
+        )
+    }
+
+    /**
+     * Returns real left-side data on the CV
+     */
+    public fun getRealLeftSideData(): LeftSide
+    {
+        val contacts = listOf(
+            IconText("07 81 96 67 97", Icons.Filled.Phone),
+            IconText("viart.felix@gmail.com", Icons.Filled.Email),
+            IconText("felix-viart.fr", TablerIcons.World)
+        )
+
+        val socials = listOf(
+            IconText("/ViartFelix", TablerIcons.BrandGithub),
+            IconText("/félix-viart/", TablerIcons.BrandLinkedin),
+            IconText("/u/FelixViart", TablerIcons.Code) //leetcode
+        )
+
+        return LeftSide(
+            lastName = "VIART",
+            firstName = "Félix",
+            title = "Web dev'",
+            presentation = "Hello, I am Felix, a web developer currently in apprenticeship at Référence Directe. I mostly do PHP and SQL, but i do too some JS. I like to learn new languages in my free time, or chill playing video games.",
+            contactMediums = contacts,
+            socials = socials
+        )
+    }
+
+    /**
+     * Returns real job experiences data
+     */
+    public fun getRealExperiences(): List<SingleExperience> = listOf(
+        SingleExperience(
+            "Référence Directe",
+            "Apprentice web developer",
+            "Doin' sum PHP for a living.",
+            Pair(
+                first = Instant.parse("2023-09-18T00:00:00Z"),
+                second = null
+            )
+        ),
+        SingleExperience(
+            "gOtaf",
+            "Web developer intern",
+            "Did sum JS and Angular.'",
+            Pair(
+                first = Instant.parse("2022-07-15T00:00:00Z"),
+                second = Instant.parse("2022-08-30T00:00:00Z")
+            )
+        ),
+        SingleExperience(
+            "Trato-Industries",
+            "Helper intern",
+            "Helped in various tasks",
+            Pair(
+                Instant.parse("2018-02-01T00:00:00Z"),
+                Instant.parse("2018-02-15T00:00:00Z")
+            )
+        )
+    )
+
+    /**
+     * Returns the real data for the education.
+     */
+    public fun getRealEducationData(): List<SingleEducation> = listOf(
+        SingleEducation(
+            "ESGI Lille",
+            "Mastère en Ingénierie Informatique et systèmes d’information",
+            Pair(
+                Instant.parse("2023-09-15T00:00:00Z"),
+                null
+            )
+        ),
+        SingleEducation(
+            "IUT of Lens",
+            "DUT MMI (Métiers du multimedia et de l’internet)",
+            Pair(
+                Instant.parse("2020-09-15T00:00:00Z"),
+                Instant.parse("2022-08-30T00:00:00Z"),
+            )
+        ),
+        SingleEducation(
+            "Lycée Frédéric Ozanam (Lille)",
+            "BAC STI2D (Mention Bien)",
+            Pair(
+                Instant.parse("2017-09-08T00:00:00Z"),
+                Instant.parse("2020-06-30T00:00:00Z"),
+            )
+        ),
+    )
 
     // ------------------------------ Data mock methods ------------------------------
 

@@ -13,8 +13,10 @@ import androidx.compose.ui.unit.dp
 import fr.felix_viart.cv_felix.background
 import fr.felix_viart.cv_felix.cv.right.experiences.Experiences
 import fr.felix_viart.cv_felix.cv.right.skills.MainSkills
+import fr.felix_viart.cv_felix.data.experience.SingleEducation
+import fr.felix_viart.cv_felix.data.experience.SingleExperience
+import fr.felix_viart.cv_felix.data.skills.SkillsHolder
 import fr.felix_viart.cv_felix.utils.Palette
-import fr.felix_viart.cv_felix.utils.Utils
 
 /**
  * Renders the right side of the CV.
@@ -22,6 +24,11 @@ import fr.felix_viart.cv_felix.utils.Utils
 @Composable
 fun cvRightSide(
     modifier: Modifier = Modifier,
+
+    jobs: List<SingleExperience>,
+    education: List<SingleEducation>,
+    skills: SkillsHolder,
+
     //first is vertical, second is horizontal
     padding: Pair<Dp, Dp> = Pair(25.dp, 50.dp)
 ) {
@@ -31,10 +38,7 @@ fun cvRightSide(
             .padding(vertical = padding.first, horizontal = padding.second),
         verticalArrangement = Arrangement.spacedBy(25.dp)
     ) {
-        Experiences(
-            jobs = Utils.getRandomAmountOfSingleExperience(min = 1, max = 3),
-            education = Utils.getRandomAmountOfSingleEducation(min = 1, max = 3)
-        )
+        Experiences( jobs = jobs, education = education )
 
         Row(
             modifier = Modifier
@@ -42,7 +46,7 @@ fun cvRightSide(
                 .background(Palette.Black)
                 .padding(25.dp)
         ) {
-            MainSkills( Utils.randomSkillHolder() )
+            MainSkills( skills = skills )
         }
 
     }

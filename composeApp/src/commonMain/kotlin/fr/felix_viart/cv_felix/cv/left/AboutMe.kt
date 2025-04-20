@@ -22,7 +22,7 @@ import fr.felix_viart.cv_felix.utils.Utils
  */
 @Composable
 fun AboutMe(
-    text: String = Utils.randomLettersInRange(min = 50, max = 200),
+    text: String,
     color: Palette = Palette.White,
     lineWidth: Dp = Utils.lineWidth,
     spaceAfterLine: Dp = 25.dp,
