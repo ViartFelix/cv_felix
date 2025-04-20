@@ -19,6 +19,12 @@ class TextStyle(
         val Bold = TextStyle(20.sp, FontWeight.Bold)
         val Italic = TextStyle(20.sp, FontWeight.Light, FontStyle.Italic)
 
+        val Big = TextStyle(22.sp, FontWeight.Normal)
+        val BigBold = TextStyle(22.sp, FontWeight.Bold)
+
+        val Small = TextStyle(18.sp, FontWeight.Normal)
+        val SmallThin = TextStyle(18.sp, FontWeight.Light)
+
         val Title = TextStyle(30.sp, FontWeight.Bold)
         val ThinTitle = TextStyle(30.sp, FontWeight.Light)
 

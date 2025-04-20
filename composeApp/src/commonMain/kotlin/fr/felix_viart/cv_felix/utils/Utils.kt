@@ -153,7 +153,7 @@ object Utils {
     public fun getSingleRandomExperience(): SingleExperience = SingleExperience(
         randomLettersInRange(5, 30),
         randomLettersInRange(10, 20),
-        randomLettersInRange(50, 200),
+        description = if( Random.nextBoolean() ) randomLettersInRange(50, 200) else null,
         randomTimestamp(),
         if( Random.nextBoolean() ) randomTimestamp() else null
     )

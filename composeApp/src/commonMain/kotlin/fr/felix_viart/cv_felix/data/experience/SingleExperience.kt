@@ -8,7 +8,7 @@ import kotlinx.datetime.Instant
 data class SingleExperience(
     val company: String,
     val jobTitle: String,
-    val description: String,
+    val description: String? = null,
 
     val beginDate: Instant,
     val endDate: Instant? = null,
