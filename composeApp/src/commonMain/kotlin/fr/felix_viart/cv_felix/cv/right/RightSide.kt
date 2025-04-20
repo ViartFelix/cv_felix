@@ -32,14 +32,16 @@ fun cvRightSide(
     skills: SkillsHolder,
 
     //first is vertical, second is horizontal
-    padding: Pair<Dp, Dp> = Pair(25.dp, 50.dp)
+    padding: Pair<Dp, Dp> = Pair(25.dp, 50.dp),
+
+    experienceSkillsSpace: Dp = 25.dp,
 ) {
     Column(
         modifier = modifier
             .fillMaxWidth()
             .padding(vertical = padding.first, horizontal = padding.second)
             .height(IntrinsicSize.Min),
-        verticalArrangement = Arrangement.spacedBy(25.dp)
+        verticalArrangement = Arrangement.spacedBy(experienceSkillsSpace)
     ) {
         Experiences( jobs = jobs, education = education )
 
