@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import fr.felix_viart.cv_felix.cv.left.cvLeftSide
+import fr.felix_viart.cv_felix.cv.right.cvRightSide
 import fr.felix_viart.cv_felix.utils.Palette
 
 /**
@@ -24,14 +25,13 @@ fun mainCvEntrypoint(
     Row(
         modifier = Modifier.fillMaxSize()
     ) {
-
         //left side container
         Column(
             modifier = Modifier
                 .fillMaxWidth( leftSideSize )
                 .fillMaxHeight()
                 .background(Palette.Black)
-                .padding(25.dp)
+                .padding(28.dp)
         ) {
             cvLeftSide(
                 modifier = Modifier.padding(20.dp)
@@ -40,9 +40,12 @@ fun mainCvEntrypoint(
 
         //right side container
         Column(
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxHeight()
+                .background(Palette.White)
         ) {
-            //cvRightSide()
+            cvRightSide()
         }
     }
 }

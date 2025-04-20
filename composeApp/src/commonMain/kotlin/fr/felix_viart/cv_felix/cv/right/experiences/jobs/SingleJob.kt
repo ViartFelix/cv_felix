@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import fr.felix_viart.cv_felix.composables.ChatBubble
 import fr.felix_viart.cv_felix.data.experience.SingleExperience
 import fr.felix_viart.cv_felix.utils.Utils
@@ -14,10 +15,13 @@ import kotlinx.datetime.Instant
  */
 @Composable
 fun SingleJob(
-    job: SingleExperience
+    job: SingleExperience,
+    modifier: Modifier = Modifier,
 ) {
     //main container
-    Column {
+    Column(
+        modifier = modifier
+    ) {
 
         ChatBubble {
             Row {

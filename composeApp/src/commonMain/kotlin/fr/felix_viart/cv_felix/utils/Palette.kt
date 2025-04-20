@@ -10,6 +10,7 @@ class Palette(val color: Color) {
     companion object {
         val White = Palette(Color.White)
         val Black = Palette(Color.Black)
+        val Grey = Palette(Color.Gray)
 
         //for testing
         val Test = Palette(Color.Green)
