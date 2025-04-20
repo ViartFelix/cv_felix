@@ -17,7 +17,7 @@ fun AllSpokenLanguages(
     languages: List<SingleLanguage>,
     spaceBellowTitle: Dp = 12.dp,
     orderByLevel: Boolean = true,
-    spaceBetween: Dp = 12.dp,
+    spaceBetween: Dp = 2.dp,
     paddingLeft: Dp = 32.dp,
 ) {
     Column(

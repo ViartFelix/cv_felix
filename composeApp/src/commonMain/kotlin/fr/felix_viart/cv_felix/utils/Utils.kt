@@ -16,9 +16,11 @@ import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.filled.ShoppingCart
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import compose.icons.TablerIcons
+import compose.icons.tablericons.Bone
 import compose.icons.tablericons.BrandGithub
 import compose.icons.tablericons.BrandLinkedin
 import compose.icons.tablericons.Code
@@ -152,16 +154,19 @@ object Utils {
             SingleSkill("PHP", SkillLevel.Advanced),
             SingleSkill("JS", SkillLevel.Intermediate),
             SingleSkill("SQL", SkillLevel.Intermediate),
-            SingleSkill("VueJS", SkillLevel.Intermediate),
-            SingleSkill("Laravel", SkillLevel.Novice),
+            SingleSkill("Kotlin", SkillLevel.Novice),
+            SingleSkill("Vue", SkillLevel.Intermediate),
+            //SingleSkill("Laravel", SkillLevel.Novice),
             SingleSkill("CI4", SkillLevel.Advanced),
-            SingleSkill("Symfony", SkillLevel.Intermediate),
+            //SingleSkill("Symfony", SkillLevel.Intermediate),
         )
 
         val interests = listOf(
             IconText("Video games", TablerIcons.DeviceGamepad),
             IconText("Coding", TablerIcons.Code),
-            IconText("Gym", TablerIcons.Run)
+            IconText("Gym", TablerIcons.Run),
+            IconText("Dogos", TablerIcons.Bone),
+            IconText("Seals", Icons.Filled.Star)
         )
 
         return SkillsHolder(
@@ -192,7 +197,7 @@ object Utils {
             lastName = "VIART",
             firstName = "Félix",
             title = "Web dev'",
-            presentation = "Hello, I am Felix, a web developer currently in apprenticeship at Référence Directe. I mostly do PHP and SQL, but i do too some JS. I like to learn new languages in my free time, or chill playing video games.",
+            presentation = "Hello, I am Felix, a web developer currently in apprenticeship at Référence Directe. I mostly do PHP and SQL, but i do some JS/TS too. I like to learn new languages in my free time, or chill while playing video games.",
             contactMediums = contacts,
             socials = socials
         )

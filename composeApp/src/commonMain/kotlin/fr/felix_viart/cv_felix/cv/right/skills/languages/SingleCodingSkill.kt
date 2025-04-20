@@ -27,7 +27,9 @@ fun SingleCodingSkill(
         verticalArrangement = Arrangement.spacedBy(spaceBellowText),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        SkillBubble {
+        SkillBubble(
+            width = 60.dp
+        ) {
             //render an icon if there is any
             if( null !== language.icon ) {
                 Icon(

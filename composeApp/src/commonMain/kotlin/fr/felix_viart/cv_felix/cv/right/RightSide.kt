@@ -2,9 +2,11 @@ package fr.felix_viart.cv_felix.cv.right
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -34,15 +36,17 @@ fun cvRightSide(
 ) {
     Column(
         modifier = modifier
-            .fillMaxSize()
-            .padding(vertical = padding.first, horizontal = padding.second),
+            .fillMaxWidth()
+            .padding(vertical = padding.first, horizontal = padding.second)
+            .height(IntrinsicSize.Min),
         verticalArrangement = Arrangement.spacedBy(25.dp)
     ) {
         Experiences( jobs = jobs, education = education )
 
         Row(
             modifier = Modifier
-                .fillMaxWidth()
+                .fillMaxSize()
+                .height(IntrinsicSize.Min)
                 .background(Palette.Black)
                 .padding(25.dp)
         ) {

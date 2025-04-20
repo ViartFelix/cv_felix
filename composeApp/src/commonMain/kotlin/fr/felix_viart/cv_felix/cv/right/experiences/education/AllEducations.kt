@@ -2,8 +2,10 @@ package fr.felix_viart.cv_felix.cv.right.experiences.education
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
@@ -29,7 +31,7 @@ fun AllEducations(
 ) {
     //main container
     Row(
-        modifier = modifier.fillMaxWidth()
+        modifier = modifier.fillMaxWidth().height(IntrinsicSize.Min)
     ) {
         //calculation for the margin left of the title
         val jobArrowWidth = 32.dp
