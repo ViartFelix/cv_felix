@@ -186,7 +186,7 @@ object Utils {
      * Returns a skill holder with random generated data inside
      */
     public fun randomSkillHolder(): SkillsHolder = SkillsHolder(
-        (1..(1..3).random()).map { getSingleRandomSpokenLanguage() },
+        (1..(4..5).random()).map { getSingleRandomSpokenLanguage() },
         (1..(3..4).random()).map { getSingleRandomSkill() },
         getRandomAmountOfIconText(min = 1, max = 3),
     )
