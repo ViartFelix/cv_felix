@@ -1,5 +1,6 @@
 package fr.felix_viart.cv_felix
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,8 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import fr.felix_viart.cv_felix.utils.Palette
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -40,3 +43,9 @@ fun Modifier.borderSkill(size: Dp = 2.dp, color: Color = Color.White) : Modifier
  * Sets the shape to a circle
  */
 fun Modifier.circle() : Modifier = this.clip(CircleShape)
+
+/**
+ * Applies a rectangle background with the specified color in the palette.
+ */
+fun Modifier.background(color: Palette) : Modifier = this.background(color.color, RectangleShape)
+
