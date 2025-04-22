@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -21,7 +22,8 @@ fun AllSpokenLanguages(
     paddingLeft: Dp = 32.dp,
 ) {
     Column(
-        verticalArrangement = Arrangement.spacedBy(spaceBellowTitle)
+        verticalArrangement = Arrangement.spacedBy(spaceBellowTitle),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         CvText("LANGUAGES", TextStyle.Subtitle, Palette.White)
 

@@ -55,6 +55,7 @@ fun NameAndPhoto(
         ) {
             Column(
                 modifier = Modifier.fillMaxWidth().height(IntrinsicSize.Min),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 //last name
                 CvText(data.lastName, style = TextStyle.LastName, color = textColor, align = TextAlign.Center)

@@ -2,8 +2,8 @@ package fr.felix_viart.cv_felix.cv.right.skills.languages
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import fr.felix_viart.cv_felix.composables.CvText
@@ -19,12 +19,14 @@ fun AllCodingLanguages(
     spaceBetween: Dp = 12.dp,
 ) {
     Column(
-        verticalArrangement = Arrangement.spacedBy(spaceBellowTitle)
+        verticalArrangement = Arrangement.spacedBy(spaceBellowTitle),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         CvText("PROGRAMMING", TextStyle.Subtitle, Palette.White)
 
-        Row(
-            horizontalArrangement = Arrangement.spacedBy(spaceBetween)
+        Column (
+            verticalArrangement = Arrangement.spacedBy(spaceBetween),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             val finalLanguages: List<SingleSkill> = if( orderByLevel ) {
                 languages.sortedByDescending {

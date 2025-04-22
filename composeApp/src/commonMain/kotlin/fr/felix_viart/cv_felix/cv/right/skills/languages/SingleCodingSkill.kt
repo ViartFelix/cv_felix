@@ -2,9 +2,11 @@ package fr.felix_viart.cv_felix.cv.right.skills.languages
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import fr.felix_viart.cv_felix.composables.CvText
@@ -24,6 +26,7 @@ fun SingleCodingSkill(
     spaceBellowText: Dp = 8.dp,
 ) {
     Column(
+        modifier = Modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(spaceBellowText),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
