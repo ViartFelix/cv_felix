@@ -1,7 +1,6 @@
 package fr.felix_viart.cv_felix
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -24,14 +23,13 @@ fun mainCvEntrypoint(
     data: MainCvData,
 ) {
     //main container
-    Row(
-        modifier = Modifier.fillMaxSize()
+    Column(
+        modifier = Modifier.fillMaxSize(),
     ) {
         //left side container
         Column(
             modifier = Modifier
-                .fillMaxWidth( leftSideSize )
-                .fillMaxHeight()
+                .fillMaxWidth()
                 .background(Palette.Black)
                 .padding(28.dp)
         ) {

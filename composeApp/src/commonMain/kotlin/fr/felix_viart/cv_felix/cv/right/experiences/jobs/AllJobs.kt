@@ -1,6 +1,7 @@
 package fr.felix_viart.cv_felix.cv.right.experiences.jobs
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
@@ -27,6 +28,7 @@ import fr.felix_viart.cv_felix.utils.Utils
 @Composable
 fun AllJobs(
     jobs: List<SingleExperience>,
+    paddingBottom: Dp = 24.dp,
     spaceBetween: Dp = 28.dp,
     leftMargin: Dp = 32.dp,
     modifier: Modifier = Modifier
@@ -71,6 +73,11 @@ fun AllJobs(
                     SingleJob(it)
                 }
             }
+
+            //Box for a padding bottom
+            Box(
+                modifier = Modifier.padding(bottom = paddingBottom)
+            )
         }
     }
 }

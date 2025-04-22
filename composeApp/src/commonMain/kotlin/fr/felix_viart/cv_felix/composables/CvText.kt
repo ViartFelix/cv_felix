@@ -3,6 +3,7 @@ package fr.felix_viart.cv_felix.composables
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import fr.felix_viart.cv_felix.utils.Palette
 import fr.felix_viart.cv_felix.utils.TextStyle
 
@@ -15,6 +16,7 @@ fun CvText(
     style: TextStyle = TextStyle.Normal,
     color: Palette = Palette.Black,
     modifier: Modifier = Modifier,
+    align: TextAlign? = null,
 ) {
     Text(
         text,
@@ -22,6 +24,7 @@ fun CvText(
         fontSize = style.size,
         fontWeight = style.boldness,
         fontStyle = style.style,
+        textAlign = align,
         color = color.color
     )
 }

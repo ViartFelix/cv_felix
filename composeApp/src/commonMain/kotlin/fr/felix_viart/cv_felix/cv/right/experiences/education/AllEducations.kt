@@ -1,6 +1,7 @@
 package fr.felix_viart.cv_felix.cv.right.experiences.education
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
@@ -25,6 +26,7 @@ import fr.felix_viart.cv_felix.utils.Utils
 @Composable
 fun AllEducations(
     jobs: List<SingleEducation>,
+    paddingTop: Dp = 24.dp,
     spaceBetween: Dp = 28.dp,
     leftMargin: Dp = 32.dp,
     modifier: Modifier = Modifier
@@ -47,6 +49,11 @@ fun AllEducations(
             modifier = Modifier.fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(spaceBetween)
         ) {
+            //box for a padding top
+            Box(
+                modifier = Modifier.padding(top = paddingTop)
+            )
+
             //container for the left side
             Column {
                 CvText(

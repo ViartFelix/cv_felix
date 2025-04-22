@@ -3,7 +3,6 @@ package fr.felix_viart.cv_felix.cv.left
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -11,6 +10,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import fr.felix_viart.cv_felix.composables.CvText
@@ -32,10 +32,10 @@ fun NameAndPhoto(
     modifier: Modifier = Modifier,
 ) {
     //main container
-    Row(
+    Column (
         modifier = modifier,
-        horizontalArrangement = Arrangement.SpaceEvenly,
-        verticalAlignment = Alignment.CenterVertically
+        verticalArrangement = Arrangement.SpaceEvenly,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         //container for the photo
         Column(
@@ -57,10 +57,10 @@ fun NameAndPhoto(
                 modifier = Modifier.fillMaxWidth().height(IntrinsicSize.Min),
             ) {
                 //last name
-                CvText(data.lastName, style = TextStyle.LastName, color = textColor)
+                CvText(data.lastName, style = TextStyle.LastName, color = textColor, align = TextAlign.Center)
 
                 //first name
-                CvText(data.firstName, style = TextStyle.FirstName, color = textColor)
+                CvText(data.firstName, style = TextStyle.FirstName, color = textColor, align = TextAlign.Center)
             }
 
             HorizontalDivider(
@@ -69,7 +69,7 @@ fun NameAndPhoto(
             )
 
             //job position
-            CvText(data.title, style = TextStyle.Position, color = textColor)
+            CvText(data.title, style = TextStyle.Position, color = textColor, align = TextAlign.Center)
         }
     }
 }
