@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -28,7 +27,6 @@ fun NameAndPhoto(
     photoSize: Float = 0.35f,
     textColor: Palette = Palette.White,
     dividerHeight: Dp = Utils.lineWidth,
-    spaceBetween: Dp = 15.dp,
     modifier: Modifier = Modifier,
 ) {
     //main container
@@ -39,18 +37,15 @@ fun NameAndPhoto(
     ) {
         //container for the photo
         Column(
-            modifier = Modifier
-                .padding(end = spaceBetween)
-                .fillMaxWidth(photoSize)
+            modifier = Modifier.fillMaxWidth(photoSize),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             photoComposable()
         }
 
         //container for the names and title
         Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(start = spaceBetween),
+            modifier = Modifier.fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(15.dp)
         ) {
             Column(
@@ -58,10 +53,10 @@ fun NameAndPhoto(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 //last name
-                CvText(data.lastName, style = TextStyle.LastName, color = textColor, align = TextAlign.Center)
+                CvText(data.lastName, style = TextStyle.LastName, color = textColor, align = TextAlign.Center, modifier = Modifier.fillMaxWidth())
 
                 //first name
-                CvText(data.firstName, style = TextStyle.FirstName, color = textColor, align = TextAlign.Center)
+                CvText(data.firstName, style = TextStyle.FirstName, color = textColor, align = TextAlign.Center, modifier = Modifier.fillMaxWidth())
             }
 
             HorizontalDivider(
@@ -70,7 +65,7 @@ fun NameAndPhoto(
             )
 
             //job position
-            CvText(data.title, style = TextStyle.Position, color = textColor, align = TextAlign.Center)
+            CvText(data.title, style = TextStyle.Position, color = textColor, align = TextAlign.Center, modifier = Modifier.fillMaxWidth())
         }
     }
 }
